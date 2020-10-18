@@ -70,8 +70,8 @@ def noise(size):
     return n
 
 
-d_optimizer = optim.Adam(discriminator.parameters(), lr=0.01)
-g_optimizer = optim.Adam(generator.parameters(), lr=0.01)
+d_optimizer = optim.Adam(discriminator.parameters(), lr=0.001)
+g_optimizer = optim.Adam(generator.parameters(), lr=0.001)
 
 loss = torch.nn.BCELoss()
 
@@ -169,7 +169,9 @@ for epoch in range(num_epochs):
         gen_error.append(g_error.detach().numpy())
     losses_disc.append(np.mean(disc_error))
     losses_gen.append(np.mean(gen_error))
-    plot_durations(runs, losses_disc, losses_gen)
+    #plot_durations(runs, losses_disc, losses_gen)
+
+    print('Epoch: ' + str(epoch))
 
     f, axarr = plt.subplots(3, 3)
     axarr[0, 0].imshow(generator(noise(1)).detach().numpy()[0, 0], cmap='gray')
@@ -182,3 +184,4 @@ for epoch in range(num_epochs):
     axarr[2, 1].imshow(generator(noise(1)).detach().numpy()[0, 0], cmap='gray')
     axarr[2, 2].imshow(generator(noise(1)).detach().numpy()[0, 0], cmap='gray')
     plt.savefig('a.png')
+    f.close()
