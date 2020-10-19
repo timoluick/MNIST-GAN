@@ -184,4 +184,3 @@ for epoch in range(num_epochs):
     axarr[2, 1].imshow(generator(noise(1)).detach().numpy()[0, 0], cmap='gray')
     axarr[2, 2].imshow(generator(noise(1)).detach().numpy()[0, 0], cmap='gray')
     plt.savefig('a.png')
-    f.close()
