@@ -16,3 +16,9 @@ just type the following in your command line
 ````
 python start.py
 ````
+
+## Output
+
+#### Untrained Output (3x3)
+
+![Untrained Output](images/untrained.png)
