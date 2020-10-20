@@ -133,8 +133,8 @@ def plot_durations(x, y, y_net):
     plt.ylabel('y')
 
     lines = plt.plot(x, y, x, y_net)
-    plt.setp(lines[0], linewidth=1, color='r')
-    plt.setp(lines[1], linewidth=1, color='g')
+    plt.setp(lines[0], linewidth=1, color='g')
+    plt.setp(lines[1], linewidth=1, color='r')
 
     plt.pause(0.0001)
     display.clear_output(wait=True)
